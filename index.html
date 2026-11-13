@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Демо-каталог · сайты для малого бизнеса</title>
+<style>
+:root{--paper:#F5F5F2;--ink:#111112;--muted:#6B6B65;--line:#DBDBD4;--accent:#1B31E8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 "Segoe UI",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1320px;margin:0 auto;padding:0 32px}
+header.hero{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(38px,5.2vw,68px);line-height:1.02;letter-spacing:-.03em;margin:18px 0 20px;font-weight:600;max-width:900px}
+.lead{max-width:620px;color:var(--muted);font-size:17px}
+.stats{display:flex;gap:36px;margin-top:34px;flex-wrap:wrap}
+.stat b{display:block;font-size:30px;letter-spacing:-.02em;font-weight:600}
+.stat span{font-size:12px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.toolbar{position:sticky;top:0;z-index:10;background:rgba(245,245,242,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 0}
+.toolbar__in{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:#fff;padding:7px 12px;font-size:13px;cursor:pointer;border-radius:999px;color:var(--ink)}
+.chip b{font-weight:600;color:var(--muted);margin-left:4px;font-size:11px}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip[aria-pressed="true"] b{color:rgba(255,255,255,.65)}
+.search{margin-left:auto;border:1px solid var(--line);background:#fff;padding:9px 14px;font-size:14px;min-width:220px;border-radius:999px;outline:none}
+.search:focus{border-color:var(--accent)}
+.count{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:36px 0 20px}
+.card{display:block;border:1px solid var(--line);background:#fff;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-2px);border-color:#B9B9B1;box-shadow:0 18px 40px -28px rgba(17,17,18,.45)}
+.card__shot{aspect-ratio:900/378;overflow:hidden;border-bottom:1px solid var(--line);background:#EDEDE8}
+.card__shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .5s ease}
+.card:hover .card__shot img{transform:scale(1.02)}
+.card__body{padding:16px 18px 18px}
+.card__meta{display:flex;gap:10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.card__style{margin-left:auto;color:#8A8A83}
+.card__name{font-size:17px;font-weight:600;line-height:1.25;margin-bottom:14px;min-height:42px}
+.card__foot{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.card__go{color:var(--ink)}
+.card:hover .card__go{color:var(--accent)}
+.empty{display:none;padding:80px 0;text-align:center;color:var(--muted)}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 0 60px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:1020px){.grid{grid-template-columns:repeat(2,1fr)}h1{font-size:44px}}
+@media(max-width:640px){.wrap{padding:0 18px}.grid{grid-template-columns:1fr;gap:20px}header.hero{padding:44px 0 28px}.stats{gap:24px}.search{min-width:100%;margin-left:0}.chip{font-size:12px;padding:6px 10px}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">демо-каталог · 2026</div>
+  <h1>Сайты для малого бизнеса</h1>
+  <p class="lead">Собраны по данным карточек в Google и Яндекс Картах: реальные отзывы, рейтинг, услуги и цены ниши. Каждый открывается с телефона и живёт по своему адресу.</p>
+  <div class="stats">
+    <div class="stat"><b>57</b><span>демо</span></div>
+    <div class="stat"><b>14</b><span>ниш</span></div>
+    <div class="stat"><b>13</b><span>городов</span></div>
+    <div class="stat"><b>4 697</b><span>отзывов внутри</span></div>
+  </div>
+</div></header>
+<div class="toolbar"><div class="wrap toolbar__in">
+  <div class="chips">
+    <button class="chip" data-f="all" aria-pressed="true">все <b>57</b></button>
+    <button class="chip" data-f="репетитор" aria-pressed="false">репетитор <b>1</b></button><button class="chip" data-f="двери" aria-pressed="false">двери <b>1</b></button><button class="chip" data-f="парикмахерская" aria-pressed="false">парикмахерская <b>5</b></button><button class="chip" data-f="остекление балконов" aria-pressed="false">остекление балконов <b>1</b></button><button class="chip" data-f="барбершоп" aria-pressed="false">барбершоп <b>5</b></button><button class="chip" data-f="маникюр" aria-pressed="false">маникюр <b>11</b></button><button class="chip" data-f="автосервис" aria-pressed="false">автосервис <b>6</b></button><button class="chip" data-f="клининг" aria-pressed="false">клининг <b>6</b></button><button class="chip" data-f="ремонт квартир" aria-pressed="false">ремонт квартир <b>1</b></button><button class="chip" data-f="цветы" aria-pressed="false">цветы <b>3</b></button><button class="chip" data-f="строительство домов" aria-pressed="false">строительство домов <b>1</b></button><button class="chip" data-f="шиномонтаж" aria-pressed="false">шиномонтаж <b>10</b></button><button class="chip" data-f="ателье" aria-pressed="false">ателье <b>4</b></button><button class="chip" data-f="грузоперевозки" aria-pressed="false">грузоперевозки <b>2</b></button>
+  </div>
+  <input class="search" id="q" type="search" placeholder="поиск по названию" aria-label="Поиск">
+  <div class="count" id="count">57 работ</div>
+</div></div>
+<main class="wrap">
+  <div class="grid" id="grid">
+  <a class="card" href="repetitor/" target="_blank" rel="noopener" data-niche="репетитор" data-name="репетитор онлайн">
+    <div class="card__shot"><img src="shots/repetitor-a.jpg" alt="репетитор, онлайн: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>репетитор</span><span>онлайн</span><span class="card__style">кино</span></div>
+      <div class="card__name">Репетитор · онлайн</div>
+      <div class="card__foot"><span class="card__rate">демо · 8 недель</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="dveri/" target="_blank" rel="noopener" data-niche="двери" data-name="двери анапа">
+    <div class="card__shot"><img src="shots/dveri-a.jpg" alt="двери, Анапа: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>двери</span><span>Анапа</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Двери · Анапа</div>
+      <div class="card__foot"><span class="card__rate">демо · калькулятор</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-24003837016/" target="_blank" rel="noopener" data-niche="парикмахерская" data-name="парикмахерская казань">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-24003837016/assets/hero.jpg" alt="парикмахерская, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>парикмахерская</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Парикмахерская · Казань</div>
+      <div class="card__foot"><span class="card__rate">5,0 · 296 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-225596238010/" target="_blank" rel="noopener" data-niche="остекление балконов" data-name="остекление балконов екатеринбург">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-225596238010/assets/hero.jpg" alt="остекление балконов, Екатеринбург: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>остекление балконов</span><span>Екатеринбург</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Остекление балконов · Екатеринбург</div>
+      <div class="card__foot"><span class="card__rate">4,7 · 292 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-1390266163/" target="_blank" rel="noopener" data-niche="барбершоп" data-name="барбершоп москва">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-1390266163/assets/hero.webp" alt="барбершоп, Москва: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>барбершоп</span><span>Москва</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Барбершоп · Москва</div>
+      <div class="card__foot"><span class="card__rate">5,0 · 281 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-94625200647/" target="_blank" rel="noopener" data-niche="парикмахерская" data-name="парикмахерская казань">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-94625200647/assets/hero.jpg" alt="парикмахерская, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>парикмахерская</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Парикмахерская · Казань</div>
+      <div class="card__foot"><span class="card__rate">5,0 · 247 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-70749443948/" target="_blank" rel="noopener" data-niche="маникюр" data-name="маникюр красноярск">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-70749443948/assets/hero.jpg" alt="маникюр, Красноярск: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>маникюр</span><span>Красноярск</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Маникюр · Красноярск</div>
+      <div class="card__foot"><span class="card__rate">5,0 · 211 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-42744120543/" target="_blank" rel="noopener" data-niche="парикмахерская" data-name="парикмахерская казань">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-42744120543/assets/hero.jpg" alt="парикмахерская, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>парикмахерская</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Парикмахерская · Казань</div>
+      <div class="card__foot"><span class="card__rate">5,0 · 184 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-49845836687/" target="_blank" rel="noopener" data-niche="парикмахерская" data-name="парикмахерская казань">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-49845836687/assets/hero.jpg" alt="парикмахерская, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>парикмахерская</span><span>Казань</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Парикмахерская · Казань</div>
+      <div class="card__foot"><span class="card__rate">5,0 · 178 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-147627084442/" target="_blank" rel="noopener" data-niche="парикмахерская" data-name="парикмахерская казань">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-147627084442/assets/hero.jpg" alt="парикмахерская, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>парикмахерская</span><span>Казань</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Парикмахерская · Казань</div>
+      <div class="card__foot"><span class="card__rate">5,0 · 170 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-166197029539/" target="_blank" rel="noopener" data-niche="маникюр" data-name="маникюр красноярск">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-166197029539/assets/hero.jpg" alt="маникюр, Красноярск: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>маникюр</span><span>Красноярск</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Маникюр · Красноярск</div>
+      <div class="card__foot"><span class="card__rate">4,7 · 68 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-116312837187/" target="_blank" rel="noopener" data-niche="автосервис" data-name="автосервис самара">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-116312837187/assets/hero.jpg" alt="автосервис, Самара: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>автосервис</span><span>Самара</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Автосервис · Самара</div>
+      <div class="card__foot"><span class="card__rate">4,9 · 52 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-119983607258/" target="_blank" rel="noopener" data-niche="маникюр" data-name="маникюр красноярск">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-119983607258/assets/hero.jpg" alt="маникюр, Красноярск: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>маникюр</span><span>Красноярск</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Маникюр · Красноярск</div>
+      <div class="card__foot"><span class="card__rate">5,0 · 50 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-68083999295/" target="_blank" rel="noopener" data-niche="клининг" data-name="клининг казань">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-68083999295/assets/hero.jpg" alt="клининг, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>клининг</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Клининг · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,9 · 30 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-103981663926/" target="_blank" rel="noopener" data-niche="клининг" data-name="клининг казань">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-103981663926/assets/hero.jpg" alt="клининг, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>клининг</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Клининг · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,8 · 24 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-23285419683/" target="_blank" rel="noopener" data-niche="маникюр" data-name="маникюр красноярск">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-23285419683/assets/hero.jpg" alt="маникюр, Красноярск: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>маникюр</span><span>Красноярск</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Маникюр · Красноярск</div>
+      <div class="card__foot"><span class="card__rate">4,5 · 15 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-236310568454/" target="_blank" rel="noopener" data-niche="ремонт квартир" data-name="ремонт квартир тюмень">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-236310568454/assets/hero.jpg" alt="ремонт квартир, Тюмень: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>ремонт квартир</span><span>Тюмень</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Ремонт квартир · Тюмень</div>
+      <div class="card__foot"><span class="card__rate">4,6 · 11 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-137025687073/" target="_blank" rel="noopener" data-niche="цветы" data-name="цветы омск">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-137025687073/assets/hero.jpg" alt="цветы, Омск: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>цветы</span><span>Омск</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Цветы · Омск</div>
+      <div class="card__foot"><span class="card__rate">4,5 · 9 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/ym-56370801235/" target="_blank" rel="noopener" data-niche="строительство домов" data-name="строительство домов казань">
+    <div class="card__shot"><img src="https://ethan2520ca-del.github.io/lead-demos-2026/ym-56370801235/assets/hero.jpg" alt="строительство домов, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>строительство домов</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Строительство домов · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,4 · 6 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-43dc1d021a85/" target="_blank" rel="noopener" data-niche="барбершоп" data-name="барбершоп казань">
+    <div class="card__shot"><img src="shots/gm-43dc1d021a85-a.jpg" alt="барбершоп, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>барбершоп</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Барбершоп · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,9 · 313 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-1a50818a82f1/" target="_blank" rel="noopener" data-niche="автосервис" data-name="автосервис краснодар">
+    <div class="card__shot"><img src="shots/gm-1a50818a82f1-a.jpg" alt="автосервис, Краснодар: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>автосервис</span><span>Краснодар</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Автосервис · Краснодар</div>
+      <div class="card__foot"><span class="card__rate">4,1 · 269 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-11a8af063b91/" target="_blank" rel="noopener" data-niche="автосервис" data-name="автосервис краснодар">
+    <div class="card__shot"><img src="shots/gm-11a8af063b91-a.jpg" alt="автосервис, Краснодар: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>автосервис</span><span>Краснодар</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Автосервис · Краснодар</div>
+      <div class="card__foot"><span class="card__rate">4,7 · 222 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-c87ebf99fa00/" target="_blank" rel="noopener" data-niche="шиномонтаж" data-name="шиномонтаж казань">
+    <div class="card__shot"><img src="shots/gm-c87ebf99fa00-a.jpg" alt="шиномонтаж, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>шиномонтаж</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Шиномонтаж · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,8 · 174 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-854d93127f3d/" target="_blank" rel="noopener" data-niche="шиномонтаж" data-name="шиномонтаж казань">
+    <div class="card__shot"><img src="shots/gm-854d93127f3d-a.jpg" alt="шиномонтаж, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>шиномонтаж</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Шиномонтаж · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,7 · 140 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-254e11541483/" target="_blank" rel="noopener" data-niche="барбершоп" data-name="барбершоп казань">
+    <div class="card__shot"><img src="shots/gm-254e11541483-a.jpg" alt="барбершоп, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>барбершоп</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Барбершоп · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,9 · 129 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-ae9329ab9e7c/" target="_blank" rel="noopener" data-niche="автосервис" data-name="автосервис краснодар">
+    <div class="card__shot"><img src="shots/gm-ae9329ab9e7c-a.jpg" alt="автосервис, Краснодар: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>автосервис</span><span>Краснодар</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Автосервис · Краснодар</div>
+      <div class="card__foot"><span class="card__rate">4,5 · 113 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-97a7d086256f/" target="_blank" rel="noopener" data-niche="шиномонтаж" data-name="шиномонтаж казань">
+    <div class="card__shot"><img src="shots/gm-97a7d086256f-a.jpg" alt="шиномонтаж, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>шиномонтаж</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Шиномонтаж · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,4 · 102 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-7bb3e85637bd/" target="_blank" rel="noopener" data-niche="шиномонтаж" data-name="шиномонтаж казань">
+    <div class="card__shot"><img src="shots/gm-7bb3e85637bd-a.jpg" alt="шиномонтаж, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>шиномонтаж</span><span>Казань</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Шиномонтаж · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,6 · 92 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-2a504d4dec05/" target="_blank" rel="noopener" data-niche="барбершоп" data-name="барбершоп казань">
+    <div class="card__shot"><img src="shots/gm-2a504d4dec05-a.jpg" alt="барбершоп, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>барбершоп</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Барбершоп · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,5 · 82 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-33910fe36354/" target="_blank" rel="noopener" data-niche="шиномонтаж" data-name="шиномонтаж екатеринбург">
+    <div class="card__shot"><img src="shots/gm-33910fe36354-a.jpg" alt="шиномонтаж, Екатеринбург: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>шиномонтаж</span><span>Екатеринбург</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Шиномонтаж · Екатеринбург</div>
+      <div class="card__foot"><span class="card__rate">4,5 · 78 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-3c022f1bd62d/" target="_blank" rel="noopener" data-niche="маникюр" data-name="маникюр казань">
+    <div class="card__shot"><img src="shots/gm-3c022f1bd62d-a.jpg" alt="маникюр, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>маникюр</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Маникюр · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,5 · 71 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-b69911b28a22/" target="_blank" rel="noopener" data-niche="маникюр" data-name="маникюр казань">
+    <div class="card__shot"><img src="shots/gm-b69911b28a22-a.jpg" alt="маникюр, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>маникюр</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Маникюр · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,8 · 66 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-6c6f9b50b387/" target="_blank" rel="noopener" data-niche="шиномонтаж" data-name="шиномонтаж екатеринбург">
+    <div class="card__shot"><img src="shots/gm-6c6f9b50b387-a.jpg" alt="шиномонтаж, Екатеринбург: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>шиномонтаж</span><span>Екатеринбург</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Шиномонтаж · Екатеринбург</div>
+      <div class="card__foot"><span class="card__rate">4,1 · 64 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-240affb7ec0d/" target="_blank" rel="noopener" data-niche="маникюр" data-name="маникюр казань">
+    <div class="card__shot"><img src="shots/gm-240affb7ec0d-a.jpg" alt="маникюр, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>маникюр</span><span>Казань</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Маникюр · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,4 · 62 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-8f22711f060d/" target="_blank" rel="noopener" data-niche="маникюр" data-name="маникюр казань">
+    <div class="card__shot"><img src="shots/gm-8f22711f060d-a.jpg" alt="маникюр, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>маникюр</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Маникюр · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,8 · 61 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-8998e91cb18c/" target="_blank" rel="noopener" data-niche="маникюр" data-name="маникюр казань">
+    <div class="card__shot"><img src="shots/gm-8998e91cb18c-a.jpg" alt="маникюр, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>маникюр</span><span>Казань</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Маникюр · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,7 · 59 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-7381365489b2/" target="_blank" rel="noopener" data-niche="автосервис" data-name="автосервис краснодар">
+    <div class="card__shot"><img src="shots/gm-7381365489b2-a.jpg" alt="автосервис, Краснодар: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>автосервис</span><span>Краснодар</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Автосервис · Краснодар</div>
+      <div class="card__foot"><span class="card__rate">4,8 · 58 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-2fb6c3590d45/" target="_blank" rel="noopener" data-niche="автосервис" data-name="автосервис краснодар">
+    <div class="card__shot"><img src="shots/gm-2fb6c3590d45-a.jpg" alt="автосервис, Краснодар: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>автосервис</span><span>Краснодар</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Автосервис · Краснодар</div>
+      <div class="card__foot"><span class="card__rate">4,9 · 55 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-772a70f6a484/" target="_blank" rel="noopener" data-niche="шиномонтаж" data-name="шиномонтаж казань">
+    <div class="card__shot"><img src="shots/gm-772a70f6a484-a.jpg" alt="шиномонтаж, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>шиномонтаж</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Шиномонтаж · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,5 · 50 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-873b2e896778/" target="_blank" rel="noopener" data-niche="шиномонтаж" data-name="шиномонтаж казань">
+    <div class="card__shot"><img src="shots/gm-873b2e896778-a.jpg" alt="шиномонтаж, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>шиномонтаж</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Шиномонтаж · Казань</div>
+      <div class="card__foot"><span class="card__rate">4 · 47 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-a1489d55b63a/" target="_blank" rel="noopener" data-niche="шиномонтаж" data-name="шиномонтаж казань">
+    <div class="card__shot"><img src="shots/gm-a1489d55b63a-a.jpg" alt="шиномонтаж, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>шиномонтаж</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Шиномонтаж · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,7 · 45 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-d1bd1ebf2425/" target="_blank" rel="noopener" data-niche="шиномонтаж" data-name="шиномонтаж казань">
+    <div class="card__shot"><img src="shots/gm-d1bd1ebf2425-a.jpg" alt="шиномонтаж, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>шиномонтаж</span><span>Казань</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Шиномонтаж · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,3 · 35 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-592f2f115e10/" target="_blank" rel="noopener" data-niche="маникюр" data-name="маникюр казань">
+    <div class="card__shot"><img src="shots/gm-592f2f115e10-a.jpg" alt="маникюр, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>маникюр</span><span>Казань</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Маникюр · Казань</div>
+      <div class="card__foot"><span class="card__rate">5 · 32 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-ddc94afb99ec/" target="_blank" rel="noopener" data-niche="маникюр" data-name="маникюр казань">
+    <div class="card__shot"><img src="shots/gm-ddc94afb99ec-a.jpg" alt="маникюр, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>маникюр</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Маникюр · Казань</div>
+      <div class="card__foot"><span class="card__rate">4,9 · 29 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-97f20a63e092/" target="_blank" rel="noopener" data-niche="ателье" data-name="ателье самара">
+    <div class="card__shot"><img src="shots/gm-97f20a63e092-a.jpg" alt="ателье, Самара: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>ателье</span><span>Самара</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Ателье · Самара</div>
+      <div class="card__foot"><span class="card__rate">4,4 · 18 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-4a116fdc5f35/" target="_blank" rel="noopener" data-niche="клининг" data-name="клининг нижний новгород">
+    <div class="card__shot"><img src="shots/gm-4a116fdc5f35-a.jpg" alt="клининг, Нижний Новгород: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>клининг</span><span>Нижний Новгород</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Клининг · Нижний Новгород</div>
+      <div class="card__foot"><span class="card__rate">4,9 · 14 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-9a7ac05e2d45/" target="_blank" rel="noopener" data-niche="ателье" data-name="ателье самара">
+    <div class="card__shot"><img src="shots/gm-9a7ac05e2d45-a.jpg" alt="ателье, Самара: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>ателье</span><span>Самара</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Ателье · Самара</div>
+      <div class="card__foot"><span class="card__rate">4,3 · 13 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-3c2a32b1517a/" target="_blank" rel="noopener" data-niche="цветы" data-name="цветы воронеж">
+    <div class="card__shot"><img src="shots/gm-3c2a32b1517a-a.jpg" alt="цветы, Воронеж: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>цветы</span><span>Воронеж</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Цветы · Воронеж</div>
+      <div class="card__foot"><span class="card__rate">4,9 · 13 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-640a1e13b92d/" target="_blank" rel="noopener" data-niche="цветы" data-name="цветы воронеж">
+    <div class="card__shot"><img src="shots/gm-640a1e13b92d-a.jpg" alt="цветы, Воронеж: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>цветы</span><span>Воронеж</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Цветы · Воронеж</div>
+      <div class="card__foot"><span class="card__rate">4,7 · 13 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-5bbc3e11e6e5/" target="_blank" rel="noopener" data-niche="грузоперевозки" data-name="грузоперевозки пермь">
+    <div class="card__shot"><img src="shots/gm-5bbc3e11e6e5-a.jpg" alt="грузоперевозки, Пермь: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>грузоперевозки</span><span>Пермь</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Грузоперевозки · Пермь</div>
+      <div class="card__foot"><span class="card__rate">4,7 · 12 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-5d438e1df4ad/" target="_blank" rel="noopener" data-niche="клининг" data-name="клининг казань">
+    <div class="card__shot"><img src="shots/gm-5d438e1df4ad-a.jpg" alt="клининг, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>клининг</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Клининг · Казань</div>
+      <div class="card__foot"><span class="card__rate">5 · 10 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-5f9fde29952a/" target="_blank" rel="noopener" data-niche="барбершоп" data-name="барбершоп казань">
+    <div class="card__shot"><img src="shots/gm-5f9fde29952a-a.jpg" alt="барбершоп, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>барбершоп</span><span>Казань</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Барбершоп · Казань</div>
+      <div class="card__foot"><span class="card__rate">5 · 8 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-445fc0e93cfe/" target="_blank" rel="noopener" data-niche="клининг" data-name="клининг казань">
+    <div class="card__shot"><img src="shots/gm-445fc0e93cfe-a.jpg" alt="клининг, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>клининг</span><span>Казань</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Клининг · Казань</div>
+      <div class="card__foot"><span class="card__rate">5 · 7 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-b605b40c34b0/" target="_blank" rel="noopener" data-niche="клининг" data-name="клининг казань">
+    <div class="card__shot"><img src="shots/gm-b605b40c34b0-a.jpg" alt="клининг, Казань: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>клининг</span><span>Казань</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Клининг · Казань</div>
+      <div class="card__foot"><span class="card__rate">5 · 7 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-f35bc0019bc9/" target="_blank" rel="noopener" data-niche="ателье" data-name="ателье самара">
+    <div class="card__shot"><img src="shots/gm-f35bc0019bc9-a.jpg" alt="ателье, Самара: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>ателье</span><span>Самара</span><span class="card__style">продающий</span></div>
+      <div class="card__name">Ателье · Самара</div>
+      <div class="card__foot"><span class="card__rate">3 · 4 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-cb3590a10a76/" target="_blank" rel="noopener" data-niche="ателье" data-name="ателье самара">
+    <div class="card__shot"><img src="shots/gm-cb3590a10a76-a.jpg" alt="ателье, Самара: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>ателье</span><span>Самара</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Ателье · Самара</div>
+      <div class="card__foot"><span class="card__rate">5 · 3 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a>
+  <a class="card" href="https://ethan2520ca-del.github.io/lead-demos-2026/gm-05715bc1089a/" target="_blank" rel="noopener" data-niche="грузоперевозки" data-name="грузоперевозки пермь">
+    <div class="card__shot"><img src="shots/gm-05715bc1089a-a.jpg" alt="грузоперевозки, Пермь: превью демо-сайта" loading="lazy"></div>
+    <div class="card__body">
+      <div class="card__meta"><span>грузоперевозки</span><span>Пермь</span><span class="card__style">лайт</span></div>
+      <div class="card__name">Грузоперевозки · Пермь</div>
+      <div class="card__foot"><span class="card__rate">5 · 3 отз.</span><span class="card__go">смотреть →</span></div>
+    </div>
+  </a></div>
+  <div class="empty" id="empty">Ничего не нашлось. Сбросьте фильтр или измените запрос.</div>
+  <footer>
+    <span>Демо-макеты. Не официальные сайты: собраны как примеры для обсуждения с владельцами.</span>
+    <span>Цены на демо ориентировочные, средние по нише.</span>
+  </footer>
+</main>
+<script>
+const grid = document.getElementById('grid');
+const cards = [...grid.querySelectorAll('.card')];
+const chips = [...document.querySelectorAll('.chip')];
+const count = document.getElementById('count');
+const empty = document.getElementById('empty');
+const q = document.getElementById('q');
+let niche = 'all';
+
+function apply(){
+  const term = (q.value || '').trim().toLowerCase();
+  let n = 0;
+  for (const c of cards) {
+    const okN = niche === 'all' || c.dataset.niche === niche;
+    const okQ = !term || (c.dataset.name || '').includes(term);
+    const show = okN && okQ;
+    c.style.display = show ? '' : 'none';
+    if (show) n++;
+  }
+  count.textContent = n + ' ' + (n % 10 === 1 && n % 100 !== 11 ? 'работа' : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 'работы' : 'работ'));
+  empty.style.display = n ? 'none' : 'block';
+}
+chips.forEach(ch => ch.addEventListener('click', () => {
+  chips.forEach(x => x.setAttribute('aria-pressed','false'));
+  ch.setAttribute('aria-pressed','true');
+  niche = ch.dataset.f;
+  apply();
+}));
+q.addEventListener('input', apply);
+apply();
+</script>
+</body></html>
