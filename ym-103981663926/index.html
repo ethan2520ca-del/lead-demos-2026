@@ -353,7 +353,11 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border:3px solid #fff
 }
 @media print{.hdr,.hero,.form,.cta{display:none}}
 </style>
-</head>
+<style id="hero-fix">
+/* первый экран: только заголовок, подзаголовок, кнопка */
+.hero .eyebrow,.hero__adv,.hero__guarantee{display:none!important}
+.hero h1{margin-bottom:18px}
+</style></head>
 <body id="top">
 
 <header class="hdr">
@@ -910,3 +914,4 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border:3px solid #fff
 </script>
 </body>
 </html>
+

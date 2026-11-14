@@ -20,6 +20,39 @@
 <link rel="stylesheet" href="style-prod.css">
 <meta name="robots" content="noindex,nofollow">
 <style>.s-reviews__count{margin-left:7px}</style>
+<style id="hero-fix">
+/* hero-fix: первый экран = фото + заголовок + подзаголовок + кнопки */
+body{overflow-x:clip}
+.s-hero{position:relative!important;display:flex!important;align-items:center!important;
+  grid-template-columns:none!important;width:100vw!important;margin-left:calc(50% - 50vw)!important;
+  margin-right:calc(50% - 50vw)!important;min-height:calc(100svh - 68px)!important;
+  padding:clamp(20px,4vh,44px) 0!important;gap:0!important;border-radius:0!important;
+  background:#16161b var(--hero-bg) 50% 50%/cover no-repeat!important;color:#fff!important;overflow:hidden}
+.s-hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(8,8,12,.88) 0%,rgba(8,8,12,.62) 36%,rgba(8,8,12,.22) 66%,rgba(8,8,12,.05) 100%),
+    linear-gradient(rgba(8,8,12,.34),rgba(8,8,12,.34))}
+.s-hero__text{position:relative;z-index:1;max-width:none;margin:0;
+  padding-left:max(var(--gut),calc((100vw - 1180px)/2 + var(--gut)));padding-right:var(--gut)}
+.s-hero__text>*:first-child{margin-top:0}
+.s-hero h1{color:#fff!important;font-size:calc(clamp(1.95rem,4vw,3.35rem) * var(--h1k,1))!important;
+  line-height:1.08!important;max-width:24ch;hyphens:none!important;text-wrap:pretty;
+  text-shadow:0 1px 18px rgba(0,0,0,.35)}
+.s-hero .s-lead{color:rgba(255,255,255,.92)!important;margin-top:18px;max-width:34ch;font-size:1.04rem;
+  text-shadow:0 1px 14px rgba(0,0,0,.4)}
+.s-hero .s-actions{margin-top:26px}
+.s-hero .s-link{color:#fff!important;border-bottom-color:rgba(255,255,255,.55)!important}
+.s-hero .s-eyebrow,.s-hero__img,.s-hero__photo,.s-hero__widget,.s-hero .s-ticks,.s-hero .s-rating{display:none!important}
+.s-section--widget{padding-top:clamp(32px,5vw,56px)}
+@media (max-width:820px){
+  .s-hero{min-height:calc(100svh - 64px)!important}
+  .s-hero__text{max-width:100%;padding:0 20px}
+  .s-hero h1{max-width:16ch;font-size:calc(clamp(1.7rem,7vw,2.4rem) * var(--h1k,1))!important}
+  .s-hero .s-actions{gap:14px 18px;flex-wrap:wrap;margin-top:22px}
+  .s-hero .s-btn{padding:0 1.15em;font-size:.92rem}
+  .s-hero .s-link{font-size:.95rem}
+  .s-hero::before{background:linear-gradient(180deg,rgba(8,8,12,.55) 0%,rgba(8,8,12,.62) 45%,rgba(8,8,12,.82) 100%)}
+}
+</style>
 </head>
 <body class="s-prod" id="top" data-wa="{{whatsapp}}" data-tg="" data-max="">
 <header class="s-bar" data-s-bar>
@@ -30,16 +63,16 @@
   </div>
 </header>
 <main>
-  <section class="s-hero">
+  <section class="s-hero" style="--hero-bg:url('assets/hero.jpg')">
     <div class="s-hero__text">
-      <p class="s-eyebrow">Ателье · Самара</p>
       <h1>Ремонт одежды в Самаре: срок до визита</h1>
       <p class="s-lead">Ремонт одежды и пошив по меркам. Срок называем до визита, цену фиксируем в квитанции.</p>
-      <ul class="s-ticks"><li>Цена и срок по фото до визита</li><li>Срок и цена – в квитанции</li><li>Примерка в цене</li></ul>
-      <p class="s-rating"><b>3</b> на Google Картах · 4 отзыва</p>
-      <figure class="s-hero__photo"><img class="" src="assets/work-1.webp" alt="Ателье Самара: Ателье, ремонт одежды" loading="lazy" decoding="async"></figure>
+      <div class="s-actions"><a class="s-btn" href="#widget">Записаться</a><a class="s-link" href="#prices">Цены и услуги</a></div>
     </div>
-    <div class="s-hero__widget" id="widget"><form class="s-widget" data-s-calc data-base="0" data-min="0" data-min-note="минимальный заказ" data-per="{&quot;work&quot;:&quot;qty&quot;}" data-message="Здравствуйте! Хочу узнать срок и цену: {выбор}. Предварительно {итого}. Пришлю фото вещи." onsubmit="return false">
+  </section>
+
+  <section class="s-section s-section--widget" id="widget">
+<form class="s-widget" data-s-calc data-base="0" data-min="0" data-min-note="минимальный заказ" data-per="{&quot;work&quot;:&quot;qty&quot;}" data-message="Здравствуйте! Хочу узнать срок и цену: {выбор}. Предварительно {итого}. Пришлю фото вещи." onsubmit="return false">
       <h2 class="s-widget__title">Цена до визита</h2>
       <fieldset><legend>Что сделать</legend><div class="s-chips s-chips--col"><label class="s-chip s-chip--row"><input type="radio" name="work" value="0" data-label="Подшить брюки или джинсы" data-price="700" checked><span>Подшить брюки или джинсы</span><b>700 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="work" value="1" data-label="Подшить юбку или платье" data-price="900"><span>Подшить юбку или платье</span><b>900 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="work" value="2" data-label="Укоротить рукава пальто" data-price="1800"><span>Укоротить рукава пальто</span><b>1 800 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="work" value="3" data-label="Ушить платье по швам" data-price="1500"><span>Ушить платье по швам</span><b>1 500 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="work" value="4" data-label="Заменить молнию в куртке" data-price="1500"><span>Заменить молнию в куртке</span><b>1 500 ₽</b></label></div></fieldset>
       <div class="s-range"><label for="f-qty"><span>Сколько вещей</span><b><output data-s-out="qty">1</output> шт</b></label>
@@ -53,9 +86,9 @@
       </div>
       <p class="s-send__note" data-s-copied hidden>Текст скопирован – вставьте его в чат.</p>
       
-    </form></div>
-    <figure class="s-hero__bg" aria-hidden="true"><img class="" src="assets/work-1.webp" alt="Ателье Самара: Ателье, ремонт одежды" decoding="async" fetchpriority="high"></figure>
+    </form>
   </section>
+
 
   <section class="s-section s-reveal">
     <header class="s-section__head"><h2>Что уже в цене</h2></header>
