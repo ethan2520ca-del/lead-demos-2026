@@ -60,7 +60,7 @@ section{scroll-margin-top:calc(var(--hdr) + 8px)}
 .btn--line{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
 .btn--line:hover{background:var(--cream)}
 
-/* ---------- hero: только фото и заголовок ---------- */
+/* ---------- hero: фото, заголовок, кнопка, две строки, гарантия ---------- */
 .hero{position:relative;min-height:calc(100svh - var(--hdr));display:flex;align-items:center;
   background:#e9efe6 url("assets/hero.webp") center/cover no-repeat;color:var(--ink);isolation:isolate}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;
@@ -69,21 +69,23 @@ section{scroll-margin-top:calc(var(--hdr) + 8px)}
 .eyebrow{font-size:11.5px;letter-spacing:.17em;text-transform:uppercase;font-weight:600;color:var(--mint);margin-bottom:20px}
 .hero .eyebrow{color:var(--mint-dark);margin-bottom:16px}
 .hero h1{font-size:clamp(2rem,min(4.6vw,7.4vh),3.6rem);font-weight:700;letter-spacing:-.035em;line-height:1.05;max-width:22ch}
-.stars{color:#f0a92c;letter-spacing:1px;font-size:13px}
-
-/* полоса фактов сразу под первым экраном */
-.factsbar{background:var(--white);border-bottom:1px solid var(--line)}
-.factsbar__in{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"lead meta" "facts facts";align-items:center;gap:10px 40px;padding-top:18px;padding-bottom:18px}
-.factsbar__lead{grid-area:lead;font-size:15px;color:var(--ink-2);max-width:56ch}
-.factsbar__list{grid-area:facts;display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14.5px}
-.factsbar__list li{display:flex;align-items:center;gap:8px;color:var(--ink-2);white-space:nowrap}
-.factsbar__list li::before{content:"";width:17px;height:17px;flex:none;border-radius:50%;background:var(--mint-soft);
+.hero__btn{margin-top:22px}
+.hero__adv{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:18px;font-size:14.5px;color:var(--ink-2);max-width:52ch}
+.hero__adv li{display:flex;align-items:center;gap:8px}
+.hero__adv li::before{content:"";width:17px;height:17px;flex:none;border-radius:50%;background:var(--mint-soft);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-6.5' stroke='%230a8f72' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-size:17px}
-.factsbar__meta{grid-area:meta;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;font-size:13px;color:var(--muted);justify-self:end}
-.factsbar__meta b{color:var(--ink);font-weight:600}
-.factsbar__dot{width:4px;height:4px;border-radius:50%;background:#c9d4cc}
-.factsbar__hours::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:#c9d4cc;
+.hero__guarantee{margin-top:14px;font-size:13px;color:var(--ink-2);opacity:.85;max-width:46ch}
+.hero h1,.hero__adv,.hero__guarantee,.hero .eyebrow{text-shadow:0 1px 14px rgba(255,255,255,.85),0 1px 2px rgba(255,255,255,.7)}
+.hero__btn{text-shadow:none}
+.stars{color:#f0a92c;letter-spacing:1px;font-size:13px}
+
+/* полоса доверия сразу под первым экраном */
+.trustbar{background:var(--white);border-bottom:1px solid var(--line)}
+.trustbar__in{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;padding-top:14px;padding-bottom:14px;font-size:13px;color:var(--muted)}
+.trustbar b{color:var(--ink);font-weight:600}
+.trustbar__dot{width:4px;height:4px;border-radius:50%;background:#c9d4cc}
+.trustbar__hours::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:#c9d4cc;
   margin-right:14px;vertical-align:middle}
 
 /* ---------- generic sections ---------- */
@@ -298,14 +300,18 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border:3px solid #fff
 @media (max-height:700px){
   .hero__in{padding-top:24px;padding-bottom:24px}
   .hero h1{font-size:clamp(1.7rem,min(3.6vw,5.6vh),2.4rem)}
-  .factsbar__in{padding:14px 0;gap:10px 24px}
-  .factsbar__list{font-size:13.5px;gap:6px 18px}
+  .hero__btn{height:48px;margin-top:16px}
+  .hero__adv{font-size:13.5px;margin-top:14px;gap:6px 20px}
+  .hero__guarantee{margin-top:10px;font-size:12.5px}
+  .trustbar__in{padding-top:10px;padding-bottom:10px;font-size:12px}
 }
 @media (max-height:560px){
   .hero__in{padding-top:16px;padding-bottom:16px}
   .hero h1{font-size:clamp(1.5rem,min(3.2vw,5.2vh),1.9rem)}
   .eyebrow{margin-bottom:10px;font-size:10.5px}
-  .factsbar__lead{display:none}
+  .hero__btn{height:44px;font-size:15px;margin-top:12px}
+  .hero__adv{margin-top:10px;font-size:12.5px}
+  .hero__guarantee{font-size:11.5px;margin-top:8px}
 }
 
 /* ---------- responsive ---------- */
@@ -325,13 +331,12 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border:3px solid #fff
   body{font-size:16px}
   .hero{min-height:76svh}
   .hero__in{padding-top:34px;padding-bottom:34px}
-  .hero::before{background:linear-gradient(180deg,rgba(255,255,255,.93) 0%,rgba(255,255,255,.8) 46%,rgba(255,255,255,.55) 100%)}
+  .hero::before{background:linear-gradient(180deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.76) 42%,rgba(255,255,255,.42) 78%,rgba(255,255,255,.25) 100%)}
   .hero h1{font-size:clamp(1.95rem,8.4vw,2.6rem)}
-  .factsbar__in{padding-top:14px;padding-bottom:14px;gap:8px 24px;grid-template-columns:1fr;grid-template-areas:"lead" "meta" "facts"}
-  .factsbar__lead{font-size:14px}
-  .factsbar__meta{justify-self:start;font-size:12.5px}
-  .factsbar__hours,.factsbar__dot:last-of-type{display:none}
-  .factsbar__list{font-size:13.5px;gap:6px 20px}
+  .hero__btn{width:100%;margin-top:20px}
+  .hero__adv{gap:8px;flex-direction:column;font-size:14px}
+  .trustbar__in{padding-top:12px;padding-bottom:12px;gap:6px 14px;font-size:12.5px}
+  .trustbar__hours,.trustbar__dot{display:none}
   .fears,.svc,.steps,.guide,.revs,.docs,.geo{grid-template-columns:1fr}
   .calc__types{grid-template-columns:1fr}
   .gal{grid-template-columns:1fr 1fr}
@@ -366,29 +371,27 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border:3px solid #fff
 </header>
 
 <main>
-<!-- 1. ПЕРВЫЙ ЭКРАН: только фото и заголовок -->
+<!-- 1. ПЕРВЫЙ ЭКРАН: фото, заголовок, кнопка, две строки, гарантия -->
 <section class="hero">
   <div class="container hero__in">
     <p class="eyebrow">Казань и пригород · клининг</p>
     <h1>Уборка квартир<br>под ключ в Казани</h1>
+    <a class="btn hero__btn" href="#cta">Получить расчёт</a>
+    <ul class="hero__adv">
+      <li>Своя химия и оборудование</li>
+      <li>Приезжаем в назначенный срок</li>
+    </ul>
+    <p class="hero__guarantee">Зафиксируйте расчёт — после уборки он не вырастет.</p>
   </div>
 </section>
 
-<!-- 2. ПОЛОСА ФАКТОВ (пояснение и три факта — уже ниже первого экрана) -->
-<section class="factsbar" aria-label="Коротко о услуге">
-  <div class="container factsbar__in">
-    <p class="factsbar__lead">Генеральная, поддерживающая и после ремонта — со своей химией и оборудованием.</p>
-    <ul class="factsbar__list">
-      <li>Цена по метражу — до выезда</li>
-      <li>Приезжаем к своему времени</li>
-      <li>Оплата после приёмки</li>
-    </ul>
-    <p class="factsbar__meta">
-      <span><span class="stars" aria-hidden="true">★★★★★</span> <b>4,8</b> · 24 отзыва</span>
-      <span class="factsbar__dot" aria-hidden="true"></span>
-      <span>ул. Гассара, 14</span>
-      <span class="factsbar__hours">по записи</span>
-    </p>
+<!-- 2. ПОЛОСА ДОВЕРИЯ сразу под первым экраном -->
+<section class="trustbar" aria-label="Рейтинг и адрес">
+  <div class="container trustbar__in">
+    <span><span class="stars" aria-hidden="true">★★★★★</span> <b>4,8</b> · 24 отзыва на Яндекс.Картах</span>
+    <span class="trustbar__dot" aria-hidden="true"></span>
+    <span>ул. Гассара, 14, Казань</span>
+    <span class="trustbar__hours">ежедневно, по записи</span>
   </div>
 </section>
 
