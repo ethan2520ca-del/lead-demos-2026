@@ -320,6 +320,13 @@ details[open] summary::after{content:"\2212"}
   .bar{display:flex}
 }
 </style>
+
+<style id="hero-fix">
+/* первый экран: только заголовок, подзаголовок, кнопки */
+.hero .eyebrow,.hero .label,.hero-list,.hero .facts{display:none!important}
+.hero h1{margin-bottom:16px}
+.hero .hero-sub,.hero .hero__lead{margin-bottom:8px}
+</style>
 </head>
 <body>
 
