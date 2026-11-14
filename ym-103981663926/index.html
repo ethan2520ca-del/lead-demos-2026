@@ -67,10 +67,10 @@ section{scroll-margin-top:calc(var(--hdr) + 8px)}
   background:linear-gradient(90deg,rgba(9,22,18,.84) 0%,rgba(9,22,18,.66) 32%,rgba(9,22,18,.36) 58%,rgba(9,22,18,.1) 78%,rgba(9,22,18,0) 100%)}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(0deg,rgba(9,22,18,.6) 0%,rgba(9,22,18,.14) 24%,transparent 50%)}
-.hero__in{padding-top:clamp(26px,4vh,54px);padding-bottom:108px;max-width:720px}
+.hero__in{padding-top:clamp(26px,4vh,54px);padding-bottom:108px}
 .eyebrow{font-size:11.5px;letter-spacing:.17em;text-transform:uppercase;font-weight:600;color:var(--mint);margin-bottom:20px}
-.hero h1{font-size:clamp(1.9rem,min(4.5vw,7.2vh),3.45rem);font-weight:700;letter-spacing:-.035em;line-height:1.04}
-.hero__lead{margin-top:20px;font-size:clamp(1rem,1.25vw,1.16rem);color:rgba(255,255,255,.86);max-width:34em}
+.hero h1{font-size:clamp(1.9rem,min(4.5vw,7.2vh),3.45rem);font-weight:700;letter-spacing:-.035em;line-height:1.04;max-width:22ch}
+.hero__lead{margin-top:20px;font-size:clamp(1rem,1.25vw,1.16rem);color:rgba(255,255,255,.86);max-width:56ch}
 .hero__facts{display:grid;gap:9px;margin-top:24px;font-size:14.5px;color:rgba(255,255,255,.9);justify-items:start}
 .hero__facts li{display:flex;align-items:center;gap:9px}
 .hero__facts li::before{content:"";width:17px;height:17px;flex:none;border-radius:50%;background:rgba(25,199,160,.22);
@@ -176,18 +176,20 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border:3px solid #fff
 .guide b{display:block;font-size:16px;line-height:1.3;margin-bottom:6px}
 .guide span{font-size:14.5px;color:var(--muted);line-height:1.5}
 
-/* ---------- works ---------- */
-.works{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.work{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
-.work__pair{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--line)}
-.work__pair figure{position:relative;margin:0}
-.work__pair img{width:100%;height:clamp(180px,19vw,250px);object-fit:cover}
+/* ---------- gallery + objects ---------- */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gal figure{position:relative;margin:0;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--ink)}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;font-size:12.5px;line-height:1.35;
+  color:#fff;background:linear-gradient(0deg,rgba(6,20,16,.88),rgba(6,20,16,.35) 60%,transparent)}
 .tag{position:absolute;left:10px;top:10px;background:rgba(9,22,18,.74);color:#fff;font-size:10.5px;
   letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:6px;font-weight:600}
-.work__body{padding:20px 22px 22px}
-.work__body h3{font-size:18.5px}
-.work__meta{margin-top:8px;font-size:14px;color:var(--muted)}
-.work__price{margin-top:10px;font-size:15px;font-weight:600;color:var(--mint-dark)}
+.objs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj{display:flex;align-items:center;justify-content:space-between;gap:18px;background:#fff;
+  border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.obj h3{font-size:17px;letter-spacing:-.01em}
+.obj p{margin-top:6px;font-size:13.5px;color:var(--muted)}
+.obj b{font-size:18px;letter-spacing:-.02em;color:var(--mint-dark);white-space:nowrap}
 
 /* ---------- steps ---------- */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -305,7 +307,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border:3px solid #fff
   .trust__in{padding-top:10px;padding-bottom:10px;font-size:12px}
 }
 @media (max-height:560px){
-  .hero__in{padding-top:18px;padding-bottom:70px;max-width:640px}
+  .hero__in{padding-top:18px;padding-bottom:70px}
   .hero h1{font-size:clamp(1.4rem,min(3vw,5vh),1.8rem)}
   .hero__lead{font-size:14px;margin-top:10px}
   .hero__facts{margin-top:12px;font-size:12.5px;gap:5px}
@@ -319,6 +321,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border:3px solid #fff
   .nav{display:none}
   .hdr__tel{margin-left:auto}
   .fears,.svc,.steps,.guide{grid-template-columns:1fr 1fr}
+  .gal{grid-template-columns:1fr 1fr}
   .calc{grid-template-columns:1fr}
   .calc__out{position:static}
   .quiz{grid-template-columns:1fr;gap:26px}
@@ -329,16 +332,17 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border:3px solid #fff
 @media (max-width:760px){
   body{font-size:16px}
   .hero{min-height:0;padding-bottom:0}
-  .hero__in{padding-top:34px;padding-bottom:120px;max-width:none}
+  .hero__in{padding-top:34px;padding-bottom:120px}
   .hero::before{background:linear-gradient(180deg,rgba(9,22,18,.9) 0%,rgba(9,22,18,.78) 45%,rgba(9,22,18,.55) 100%)}
   .hero h1{font-size:clamp(1.95rem,8.4vw,2.6rem)}
   .hero__facts{flex-direction:column;gap:9px;font-size:14px}
   .hero__actions .btn{width:100%}
   .trust__in{padding-top:12px;padding-bottom:12px;gap:8px 16px;font-size:12.5px}
   .trust__dot{display:none}
-  .fears,.svc,.steps,.guide,.works,.revs,.docs,.geo{grid-template-columns:1fr}
+  .fears,.svc,.steps,.guide,.revs,.docs,.geo{grid-template-columns:1fr}
   .calc__types{grid-template-columns:1fr}
-  .work__pair img{height:170px}
+  .gal{grid-template-columns:1fr 1fr}
+  .objs{grid-template-columns:1fr}
   .brand span{display:none}
   .hdr__tel{font-size:14px}
   .hdr .btn--sm{display:none}
@@ -569,34 +573,20 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border:3px solid #fff
   <div class="container">
     <div class="sec__head">
       <p class="eyebrow">Работы</p>
-      <h2 id="works-h">До и после — с ценой по прайсу</h2>
-      <p>Фото объектов — с карточки бизнеса на Яндекс.Картах. Цена и срок посчитаны по прайсу из этого же сайта.</p>
+      <h2 id="works-h">До и после — четыре кадра с объектов</h2>
+      <p>Фото — с карточки бизнеса на Яндекс.Картах. Подписи по делу: что было и что стало, без «наша работа №1».</p>
     </div>
-    <div class="works">
-      <article class="work">
-        <div class="work__pair">
-          <figure><img src="assets/work/kv-before.jpg" alt="Квартира после ремонта: пол до уборки" width="1041" height="509" loading="lazy"><span class="tag">До</span></figure>
-          <figure><img src="assets/work/kv-after.jpg" alt="Квартира после ремонта: пол после уборки" width="1041" height="472" loading="lazy"><span class="tag">После</span></figure>
-        </div>
-        <div class="work__body">
-          <h3>Квартира после ремонта</h3>
-          <p class="work__meta">Казань · полы и стены · 280 ₽/м², срок 1 день</p>
-          <p class="work__price">60 м² — 16 800 ₽</p>
-        </div>
-      </article>
-      <article class="work">
-        <div class="work__pair">
-          <figure><img src="assets/work/office-before.jpg" alt="Офис после ремонта: коридор до уборки" width="470" height="744" loading="lazy"><span class="tag">До</span></figure>
-          <figure><img src="assets/work/office-after.jpg" alt="Офис после ремонта: коридор после уборки" width="471" height="744" loading="lazy"><span class="tag">После</span></figure>
-        </div>
-        <div class="work__body">
-          <h3>Офис после ремонта</h3>
-          <p class="work__meta">Казань · полы, стены, окна · 280 ₽/м², срок 1–2 дня</p>
-          <p class="work__price">80 м² — 22 400 ₽</p>
-        </div>
-      </article>
+    <div class="gal">
+      <figure><img src="assets/work/gal-1.jpg" alt="Квартира после ремонта: пол до уборки" width="900" height="675" loading="lazy"><span class="tag">До</span><figcaption>До: строительная пыль, обрезки и следы краски на полу</figcaption></figure>
+      <figure><img src="assets/work/gal-2.jpg" alt="Квартира после ремонта: пол после уборки" width="900" height="675" loading="lazy"><span class="tag">После</span><figcaption>После: пол вымыт, плинтусы и стыки протёрты</figcaption></figure>
+      <figure><img src="assets/work/gal-3.jpg" alt="Офис после ремонта: коридор до уборки" width="900" height="675" loading="lazy"><span class="tag">До</span><figcaption>До: коридор после черновой отделки, пыль по всей длине</figcaption></figure>
+      <figure><img src="assets/work/gal-4.jpg" alt="Офис после ремонта: коридор после уборки" width="900" height="675" loading="lazy"><span class="tag">После</span><figcaption>После: полы вымыты, коридор готов к приёмке</figcaption></figure>
     </div>
-    <p class="sec__note">Площади в примерах — расчёт по прайсу, а не факт из карточки. На боевом сайте поставим ваши объекты, реальные метражи и сроки.</p>
+    <div class="objs">
+      <div class="obj"><div><h3>Квартира после ремонта</h3><p>Казань · 60 м² · полы, стены, окна · срок 1 день</p></div><b>16 800 ₽</b></div>
+      <div class="obj"><div><h3>Офис после ремонта</h3><p>Казань · 80 м² · полы, стены, окна · срок 1–2 дня</p></div><b>22 400 ₽</b></div>
+    </div>
+    <p class="sec__note">Метражи и суммы — расчёт по прайсу, а не факт из карточки. На боевом сайте поставим ваши объекты и реальные сроки.</p>
   </div>
 </section>
 
