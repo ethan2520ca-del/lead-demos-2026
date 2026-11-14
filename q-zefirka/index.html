@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Зефирка — кофейня в Тверь: меню, доставка, кофе с собой</title>
+<meta name="description" content="Кофейня в Тверь: своя обжарка, десерты, кофе с собой и доставка за 40 минут.">
+<style>
+  :root{
+    --bg:#17100c; --panel:#221711; --ink:#faf3ec; --mute:#b9a698;
+    --line:#33241b; --accent:#d59a5f; --accent2:#8c5b34; --soft:#2a1c14;
+    --r:18px; --wrap:1120px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink)}
+  body{font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;gap:28px;height:68px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em}
+  .logo i{width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:block}
+  .nav-links{display:flex;gap:22px;margin-left:auto;font-size:14.5px;color:var(--mute)}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:14.5px;border:1px solid transparent;cursor:pointer;transition:.18s}
+  .btn-p{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+  .btn-p:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn-g{border-color:var(--line);color:var(--ink);background:transparent}
+  .btn-g:hover{background:var(--soft)}
+  .hero{position:relative;min-height:calc(100svh - 68px);display:flex;align-items:center;padding:96px 0 70px;
+  background:url("assets/hero.webp") center 45%/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;z-index:0;
+  background:linear-gradient(90deg,rgba(14,10,7,.84) 0%,rgba(14,10,7,.6) 40%,rgba(14,10,7,.18) 70%,rgba(14,10,7,0) 100%),
+    linear-gradient(0deg,rgba(14,10,7,.9) 0%,rgba(14,10,7,.5) 24%,rgba(14,10,7,0) 52%)}
+.hero > .wrap{position:relative;z-index:1;width:100%}
+.hero h1{color:#fff;max-width:640px}
+.hero .lead{color:rgba(255,255,255,.9);max-width:560px}
+.hero .eyebrow{background:rgba(0,0,0,.35);border-color:rgba(255,255,255,.28)}
+.hero .stats{border-top-color:rgba(255,255,255,.22)}
+.hero .stats span{color:rgba(255,255,255,.72)}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);background:color-mix(in srgb,var(--accent) 10%,transparent);padding:7px 12px;border-radius:999px;font-weight:600}
+  h1{font-size:clamp(32px,4.4vw,54px);line-height:1.05;letter-spacing:-.03em;margin:20px 0 16px;font-weight:750}
+  .lead{font-size:18px;color:var(--mute);max-width:46ch;margin:0 0 28px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .stats{display:flex;gap:34px;margin-top:38px;padding-top:26px;border-top:1px solid var(--line)}
+  .stats b{display:block;font-size:22px;letter-spacing:-.02em}
+  .stats span{font-size:13px;color:var(--mute)}
+  /* фото из карточки клиента: пока его нет — тёплая заглушка, слот hero-photo */
+  .shot{position:relative;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 40px 90px -50px #0009;background:linear-gradient(150deg,#3a2416,#1d120c 70%)}
+  .shot img{display:block;width:100%;height:440px;object-fit:cover}
+  .shot .ph{height:440px;background:
+      radial-gradient(120% 80% at 22% 18%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 60%),
+      radial-gradient(90% 70% at 80% 90%,#0009,transparent 65%),
+      linear-gradient(150deg,#4a2d1a,#1b110b)}
+  .shot .tag{position:absolute;left:18px;bottom:18px;background:rgba(23,16,12,.86);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:14px;font-weight:600;backdrop-filter:blur(6px)}
+  .shot .tag span{display:block;font-size:12.5px;color:var(--mute);font-weight:500;margin-top:2px}
+  section{padding:76px 0;border-top:1px solid var(--line)}
+  .sec-head{max-width:640px;margin-bottom:40px}
+  h2{font-size:clamp(24px,2.6vw,34px);letter-spacing:-.025em;margin:0 0 12px;font-weight:700}
+  .sec-head p{color:var(--mute);margin:0;font-size:16.5px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:.2s}
+  .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
+  .card .ic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--soft);color:var(--accent);margin-bottom:16px}
+  .card .ic svg{width:20px;height:20px}
+  .card h3{margin:0 0 8px;font-size:17.5px;letter-spacing:-.01em}
+  .card p{margin:0;color:var(--mute);font-size:14.8px}
+  /* меню */
+  .menu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .menu-col{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+  .menu-col h3{margin:0 0 18px;font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+  .line{display:flex;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px dashed var(--line)}
+  .line:last-child{border-bottom:0}
+  .line .nm{font-size:15.5px}
+  .line .nm small{display:block;color:var(--mute);font-size:13px}
+  .line .dots{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-4px)}
+  .line .pr{font-weight:700;font-size:15.5px;white-space:nowrap}
+  .note{margin-top:18px;font-size:13px;color:var(--mute)}
+  /* доставка */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .price{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column}
+  .price.mid{border-color:var(--accent);box-shadow:0 18px 50px -30px color-mix(in srgb,var(--accent) 60%,transparent)}
+  .price .t{font-size:14px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+  .price .v{font-size:30px;font-weight:750;letter-spacing:-.02em;margin:10px 0 4px}
+  .price ul{list-style:none;padding:0;margin:16px 0 22px;display:grid;gap:9px;font-size:14.5px;color:var(--mute)}
+  .price li:before{content:"✓";color:var(--accent);margin-right:9px;font-weight:700}
+  .price .btn{justify-content:center;margin-top:auto}
+  /* контакты */
+  .where{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start}
+  .hours{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:15.5px}
+  .hours li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);color:var(--mute)}
+  .hours b{color:var(--ink);font-weight:600}
+  .cta{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--panel)),var(--panel));border:1px solid var(--line);border-radius:26px;padding:44px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+  .form{display:grid;gap:12px}
+  .form input,.form select{background:var(--bg);border:1px solid var(--line);color:var(--ink);border-radius:11px;padding:13px 15px;font:inherit;font-size:14.5px;outline:none}
+  .form input:focus,.form select:focus{border-color:var(--accent)}
+  .form .btn{justify-content:center}
+  .fine{font-size:12.5px;color:var(--mute)}
+  footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-size:14px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  @media (max-width:900px){
+    .hero{min-height:0;padding:96px 0 56px;background-position:62% 40%}
+    .grid3,.price-grid,.menu{grid-template-columns:1fr}
+    .cta,.where{grid-template-columns:1fr;padding:28px}
+    .nav-links{display:none}
+    .stats{gap:22px}
+    
+  }
+
+/* Галерея работ (правка 14.11.2026) */
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.gal figure{margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--panel)}
+.gal img{display:block;width:100%;height:330px;object-fit:cover}
+.gal figcaption{padding:12px 15px;font-size:13.5px;color:var(--mute)}
+@media(max-width:900px){.gal{grid-template-columns:1fr}.gal img{height:250px}}
+
+/* контраст текста на фото */
+.hero h1,.hero .lead,.hero .facts li,.hero .cta-note{text-shadow:0 2px 14px rgba(0,0,0,.65),0 1px 3px rgba(0,0,0,.5)}
+</style>
+</head><body>
+<header class="nav"><div class="wrap nav-in">
+  <div class="logo"><i></i>Зефирка</div>
+  <nav class="nav-links"><a href="#menu">Меню</a><a href="#delivery">Доставка</a><a href="#about">О нас</a><a href="#contact">Контакты</a></nav>
+  <a class="btn btn-p" href="#contact">Заказать кофе</a>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+  <div>
+    <h1>Кофе, который хочется пить медленно</h1>
+    <p class="lead">Своя обжарка, свежая выпечка и кофе с собой. Доставка по Тверь за 40 минут, самовывоз — за 5.</p>
+    <div class="hero-actions">
+      <a class="btn btn-p" href="#menu">Смотреть меню</a>
+      
+    </div>
+  </div>
+  </div>
+</div>
+
+<section id="menu"><div class="wrap">
+  <div class="sec-head"><h2>Меню</h2><p>Цены на витрине — те же, что в чеке. Размеры: 250 мл и 400 мл.</p></div>
+  <div class="menu">
+    <div class="menu-col">
+      <h3>Кофе</h3>
+      <div class="line"><div class="nm">Эспрессо<small>двойной, 40 мл</small></div><div class="dots"></div><div class="pr">190 ₽</div></div>
+      <div class="line"><div class="nm">Американо<small>250 / 400 мл</small></div><div class="dots"></div><div class="pr">210 / 250 ₽</div></div>
+      <div class="line"><div class="nm">Капучино<small>250 / 400 мл</small></div><div class="dots"></div><div class="pr">260 / 310 ₽</div></div>
+      <div class="line"><div class="nm">Латте<small>250 / 400 мл</small></div><div class="dots"></div><div class="pr">290 / 340 ₽</div></div>
+      <div class="line"><div class="nm">Флэт уайт<small>двойной шот, 200 мл</small></div><div class="dots"></div><div class="pr">290 ₽</div></div>
+      <div class="line"><div class="nm">Раф ванильный<small>250 мл</small></div><div class="dots"></div><div class="pr">320 ₽</div></div>
+      <div class="line"><div class="nm">Фильтр дня<small>меняется каждую неделю</small></div><div class="dots"></div><div class="pr">250 ₽</div></div>
+    </div>
+    <div class="menu-col">
+      <h3>Не кофе и к кофе</h3>
+      <div class="line"><div class="nm">Какао на молоке<small>250 мл</small></div><div class="dots"></div><div class="pr">260 ₽</div></div>
+      <div class="line"><div class="nm">Чай листовой<small>чайник 500 мл</small></div><div class="dots"></div><div class="pr">220 ₽</div></div>
+      <div class="line"><div class="nm">Круассан<small>с миндалём или классический</small></div><div class="dots"></div><div class="pr">180 ₽</div></div>
+      <div class="line"><div class="nm">Чизкейк<small>кусок, 120 г</small></div><div class="dots"></div><div class="pr">320 ₽</div></div>
+      <div class="line"><div class="nm">Сырники<small>3 шт, со сметаной</small></div><div class="dots"></div><div class="pr">290 ₽</div></div>
+      <div class="line"><div class="nm">Зерно домой<small>250 г, свежая обжарка</small></div><div class="dots"></div><div class="pr">990 ₽</div></div>
+      <div class="line"><div class="nm">Дрип-пакеты<small>упаковка 10 шт</small></div><div class="dots"></div><div class="pr">690 ₽</div></div>
+    </div>
+  </div>
+  <p class="note">Молоко растительное — +40 ₽. Свой стакан — −20 ₽. Цены из карточки бизнеса; если у вас другой прайс, замените цифры.</p>
+</div></section>
+
+<section id="delivery"><div class="wrap">
+  <div class="sec-head"><h2>Доставка и самовывоз</h2><p>Готовим сразу после заказа, в пути кофе в термостакане.</p></div>
+  <div class="price-grid">
+    <div class="price">
+      <div class="t">Самовывоз</div><div class="v">0 ₽</div>
+      <ul><li>Готово через 5–7 минут</li><li>Можно оплатить на месте</li><li>Свой стакан — скидка 20 ₽</li></ul>
+      <a class="btn btn-g" href="#contact">Заказать</a></div>
+    <div class="price mid">
+      <div class="t">Курьер по городу</div><div class="v">199 ₽</div>
+      <ul><li>Доставка 30–40 минут</li><li>Бесплатно от 1 500 ₽</li><li>Термостакан и крышка</li></ul>
+      <a class="btn btn-p" href="#contact">Заказать</a></div>
+    <div class="price">
+      <div class="t">Офис и кофе-брейк</div><div class="v">от 3 000 ₽</div>
+      <ul><li>От 10 стаканов</li><li>Привозим к нужному часу</li><li>Счёт и закрывающие документы</li></ul>
+      <a class="btn btn-g" href="#contact">Обсудить</a></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <div class="sec-head"><h2>Почему сюда возвращаются</h2><p>Три вещи, которые видно в чашке.</p></div>
+  <div class="grid3">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12l5 5L20 6"/></svg></div><h3>Своя обжарка</h3>
+      <p>Обжариваем партиями по 5 кг каждую неделю — зерно не лежит месяцами на складе.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div><h3>Рецепт по граммам</h3>
+      <p>Дозировка и время экстракции зафиксированы: чашка сегодня такая же, как вчера.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l2.4 6.2L21 12l-6.6 2.8L12 21l-2.4-6.2L3 12l6.6-2.8z"/></svg></div><h3>Не только кофе</h3>
+      <p>Выпечка с утра, сырники и какао — можно зайти не за кофе, а поесть.</p></div>
+  </div>
+</div></section>
+
+<section id="works"><div class="wrap">
+  <div class="sec-head"><h2>Что на витрине</h2><p>Свежая выпечка с утра и кофе, который можно унести с собой.</p></div>
+  <div class="gal">
+    <figure><img src="assets/drink.webp" alt="Капучино с рисунком"><figcaption>Капучино 250 мл — 260 ₽</figcaption></figure>
+    <figure><img src="assets/pastry.webp" alt="Круассан и ягодный пирог"><figcaption>Круассан с миндалём и ягодный пирог — выпекаем каждое утро</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="where">
+    <div>
+      <h2>Где мы</h2>
+      <p class="lead" style="margin:12px 0 22px"></p>
+      <ul class="hours">
+        <li><b>Пн–Пт</b><span>08:00 – 21:00</span></li>
+        <li><b>Сб–Вс</b><span>09:00 – 21:00</span></li>
+        <li><b>Телефон</b><span></span></li>
+        <li><b>Написать</b><span>https://t.me/zefirka_by_zefirnaya</span></li>
+      </ul>
+      <p class="note">Часы и адрес — из карточки бизнеса; замените, если работаете иначе.</p>
+    </div>
+    <div class="cta" style="grid-template-columns:1fr">
+      <div>
+        <h2 style="font-size:22px">Заказать кофе</h2>
+        <p class="lead" style="margin:8px 0 18px;font-size:15px">Оставьте номер — перезвоним и подтвердим заказ. Это демо-форма: данные никуда не уходят.</p>
+      </div>
+      <form class="form" onsubmit="event.preventDefault();this.querySelector('.btn').textContent='Заказ принят ✓'">
+        <input placeholder="Как вас зовут" required>
+        <input placeholder="Телефон" required>
+        <select aria-label="Что заказать"><option>Самовывоз</option><option>Доставка курьером</option><option>Кофе-брейк в офис</option></select>
+        <button class="btn btn-p" type="submit">Отправить</button>
+        <div class="fine">Нажимая кнопку, вы соглашаетесь на обработку данных.</div>
+      </form>
+    </div>
+  </div>
+</div></section>
+
+<div class="wrap"><footer>
+  <div>© 2026 Зефирка · Тверь</div>
+  <div>Часы, адрес и цены — из карточки на Яндекс.Картах</div>
+</footer></div>
+</body></html>
