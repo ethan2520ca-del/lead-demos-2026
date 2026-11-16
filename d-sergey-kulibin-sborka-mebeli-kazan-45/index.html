@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Сергей Кулибин — сборка мебели · Кухни и шкафы на заказ</title>
+<meta name="description" content="По вашим размерам: присылаете размеры или план, за день даём предварительный расчёт. Точная смета после замера, срок изготовления в договоре.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Кухни на заказ в Казани – расчёт за день">
+<meta property="og:description" content="По вашим размерам: присылаете размеры или план, за день даём предварительный расчёт. Точная смета после замера, срок изготовления в договоре.">
+<meta property="og:image" content="assets/kitchen-oak.webp">
+<link rel="preload" as="image" href="assets/kitchen-oak.webp" fetchpriority="high">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%276%27 y=%276%27 width=%2720%27 height=%2720%27 rx=%275%27 fill=%27%23c5ced8%27/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/piazzolla-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face { font-family: "Piazzolla"; font-style: normal; font-weight: 500 600; font-display: swap;
+    src: url(assets/fonts/piazzolla-cyr.woff2) format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Piazzolla"; font-style: normal; font-weight: 500 600; font-display: swap;
+    src: url(assets/fonts/piazzolla-lat.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212; }
+@font-face { font-family: "Piazzolla"; font-style: italic; font-weight: 500; font-display: swap;
+    src: url(assets/fonts/piazzolla-italic-cyr.woff2) format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Piazzolla"; font-style: italic; font-weight: 500; font-display: swap;
+    src: url(assets/fonts/piazzolla-italic-lat.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 400 600; font-display: swap;
+    src: url(assets/fonts/manrope-cyr.woff2) format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 400 600; font-display: swap;
+    src: url(assets/fonts/manrope-lat.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212; }
+:root { --c-canvas: #121417; --c-surface: #1a1d22; --c-ink: #e9ecef; --c-ink-soft: #a9b0b8; --c-accent: #c5ced8; --c-accent-ink: #12161b; --c-accent-deep: #c5ced8; --f-display: "Piazzolla", "Georgia", "Times New Roman", serif; --f-text: "Manrope", "Segoe UI", system-ui, sans-serif; --h1k: 1; }
+</style>
+<link rel="stylesheet" href="style-prod.css">
+<style id="hero-fix">
+/* hero-fix: первый экран = фото + заголовок + подзаголовок + кнопки */
+body{overflow-x:clip}
+.s-hero{position:relative!important;display:flex!important;align-items:center!important;
+  grid-template-columns:none!important;width:100vw!important;margin-left:calc(50% - 50vw)!important;
+  margin-right:calc(50% - 50vw)!important;min-height:calc(100svh - 68px)!important;
+  padding:clamp(20px,4vh,44px) 0!important;gap:0!important;border-radius:0!important;
+  background:#16161b var(--hero-bg) 50% 50%/cover no-repeat!important;color:#fff!important;overflow:hidden}
+.s-hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(8,8,12,.88) 0%,rgba(8,8,12,.62) 36%,rgba(8,8,12,.22) 66%,rgba(8,8,12,.05) 100%),
+    linear-gradient(rgba(8,8,12,.34),rgba(8,8,12,.34))}
+.s-hero__text{position:relative;z-index:1;max-width:none;margin:0;
+  padding-left:max(var(--gut),calc((100vw - 1180px)/2 + var(--gut)));padding-right:var(--gut)}
+.s-hero__text>*:first-child{margin-top:0}
+.s-hero h1{color:#fff!important;font-size:calc(clamp(1.95rem,3.5vw,3.1rem) * var(--h1k,1))!important;
+  line-height:1.1!important;max-width:640px!important;hyphens:none!important;text-wrap:pretty;
+  text-shadow:0 1px 18px rgba(0,0,0,.35)}
+.s-hero .s-lead{color:rgba(255,255,255,.92)!important;margin-top:18px;max-width:560px!important;font-size:1.04rem;
+  text-shadow:0 1px 14px rgba(0,0,0,.4)}
+.s-hero .s-actions{margin-top:26px}
+.s-hero .s-link{color:#fff!important;border-bottom-color:rgba(255,255,255,.55)!important}
+.s-hero .s-eyebrow,.s-hero__img,.s-hero__photo,.s-hero__widget,.s-hero .s-ticks,.s-hero .s-rating{display:none!important}
+.s-section--widget{padding-top:clamp(32px,5vw,56px)}
+@media (max-width:820px){
+  .s-hero{min-height:calc(100svh - 64px)!important}
+  .s-hero__text{max-width:100%;padding:0 20px}
+  .s-hero h1{max-width:none;font-size:calc(clamp(1.7rem,7vw,2.4rem) * var(--h1k,1))!important}
+  .s-hero .s-actions{gap:14px 18px;flex-wrap:wrap;margin-top:22px}
+  .s-hero .s-btn{padding:0 1.15em;font-size:.92rem}
+  .s-hero .s-link{font-size:.95rem}
+  .s-hero::before{background:linear-gradient(180deg,rgba(8,8,12,.55) 0%,rgba(8,8,12,.62) 45%,rgba(8,8,12,.82) 100%)}
+}
+</style>
+</head>
+<body class="s-prod" id="top" data-wa="" data-tg="" data-max="">
+<header class="s-bar" data-s-bar>
+  <a class="s-bar__brand" href="#top"><i aria-hidden="true"></i>Сергей Кулибин — сборка мебели</a>
+  <div class="s-bar__right">
+    <a class="s-bar__tel" href="#"></a>
+    <a class="s-btn s-btn--sm" href="#widget">Рассчитать кухню</a>
+  </div>
+</header>
+<main>
+  <section class="s-hero" style="--hero-bg:url('assets/facade.webp')">
+    <div class="s-hero__text">
+      <h1>Кухни на заказ в Казани – расчёт за день</h1>
+      <p class="s-lead">По вашим размерам: присылаете размеры или план, за день даём предварительный расчёт.</p>
+      <div class="s-actions"><a class="s-btn" href="#widget">Записаться</a><a class="s-link" href="#prices">Цены и услуги</a></div>
+    </div>
+  </section>
+
+  <section class="s-section s-section--widget" id="widget">
+<form class="s-widget" data-s-calc data-base="0" data-min="0" data-min-note="минимальный заказ" data-per="{&quot;facade&quot;:&quot;length&quot;}" data-message="Здравствуйте! Хочу рассчитать кухню: {выбор}. Ориентир {итого}. Когда можно на замер?" onsubmit="return false">
+      <h2 class="s-widget__title">Рассчитать кухню</h2>
+      <div class="s-range"><label for="f-length"><span>Длина кухни</span><b><output data-s-out="length">3</output> м</b></label>
+      <input id="f-length" type="range" name="length" min="1.5" max="6" step="0.5" value="3" data-price="0" data-label="Длина" data-unit="м"></div>
+      <fieldset><legend>Фасады</legend><div class="s-chips s-chips--col"><label class="s-chip s-chip--row"><input type="radio" name="facade" value="0" data-label="Матовый графит" data-price="65000" checked><span>Матовый графит</span><b>65 000 ₽<small>/м</small></b></label><label class="s-chip s-chip--row"><input type="radio" name="facade" value="1" data-label="Тёплый белый" data-price="68000"><span>Тёплый белый</span><b>68 000 ₽<small>/м</small></b></label><label class="s-chip s-chip--row"><input type="radio" name="facade" value="2" data-label="Глубокий зелёный" data-price="70000"><span>Глубокий зелёный</span><b>70 000 ₽<small>/м</small></b></label><label class="s-chip s-chip--row"><input type="radio" name="facade" value="3" data-label="Дуб натуральный" data-price="85000"><span>Дуб натуральный</span><b>85 000 ₽<small>/м</small></b></label></div></fieldset>
+      <p class="s-total"><span>Ориентир до замера</span><b data-s-total>–</b></p>
+      <div class="s-bubble" aria-live="polite"><span class="s-bubble__label">Ваше сообщение</span><p data-s-bubble></p></div>
+      <div class="s-send">
+        <a class="s-btn s-btn--wide" data-s-msg="whatsapp" href="#">Отправить расчёт в WhatsApp</a>
+        
+      </div>
+      <p class="s-send__note" data-s-copied hidden>Текст скопирован – вставьте его в чат.</p>
+      <p class="s-demo">Цены для примера. В вашем сайте будут ваши.</p>
+    </form>
+  </section>
+
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Что входит в цену кухни</h2></header>
+    <div class="s-incl">
+      <div><h3>Входит</h3><ul><li>Корпус</li><li>Фасады</li><li>Столешница</li><li>Фурнитура с доводчиками</li><li>Монтаж, подключение мойки и техники</li><li>Вывоз упаковки и пыли после сборки</li></ul></div>
+      <div><h3>Отдельно, если нужно</h3><ul><li>Техника</li><li>Мойка</li></ul></div>
+    </div>
+  </section>
+
+  <section class="s-section s-reveal" id="prices">
+    <header class="s-section__head"><h2>Сколько стоит</h2><p>Точную смету считаем после замера, а прицениться можно сейчас. В цену входят корпус, фасады, столешница, фурнитура с доводчиками и монтаж.</p></header>
+    <div class="s-board"><div class="s-board__group">
+      <h3 class="s-board__title">Кухни, столешница кварц</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Кухня прямая 3 м, как на фото<em>эмаль, кварц, доводчики на всех дверцах и ящиках</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">от 195 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Фасад «Матовый графит»<em>МДФ в эмали, без ручек</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">от 65 000 ₽<small> за пог. м</small></span></li>
+        <li class="s-board__row"><span class="s-board__name">Фасад «Тёплый белый»<em>МДФ в суперматовой эмали</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">от 68 000 ₽<small> за пог. м</small></span></li>
+        <li class="s-board__row"><span class="s-board__name">Фасад «Глубокий зелёный»<em>МДФ в эмали, цвет по RAL</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">от 70 000 ₽<small> за пог. м</small></span></li>
+        <li class="s-board__row"><span class="s-board__name">Фасад «Дуб натуральный»<em>шпон дуба на МДФ, масло-воск</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">от 85 000 ₽<small> за пог. м</small></span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Шкафы и гардеробные</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Шкаф распашной или купе<em>до потолка, с подсветкой и наполнением</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">от 45 000 ₽<small> за пог. м</small></span></li>
+        <li class="s-board__row"><span class="s-board__name">Гардеробная<em>открытая система или комната с дверью</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">от 120 000 ₽<small> за проект</small></span></li>
+      </ul>
+    </div></div>
+    <p class="s-note">Техника и мойка – отдельно. Угловые кухни считаем по размерам. Расчёт до замера предварительный, точная смета – после замера вместе с 3D-проектом.</p><p class="s-demo">Цены для примера. В вашем сайте будут ваши.</p>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Как заказать</h2></header>
+    <ol class="s-steps">
+      <li class="s-steps__item"><span class="s-steps__n">01</span><h3>Размеры и расчёт</h3><p>План из ЖК или фото стены с рулеткой – за день предварительный расчёт.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">02</span><h3>Замер</h3><p>Приезжаем с дальномером и образцами фасадов.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">03</span><h3>3D-проект и точная смета</h3><p>Меняем проект, пока не понравится.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">04</span><h3>Договор с датой</h3><p>Срок изготовления и дата монтажа – в договоре.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">05</span><h3>Изготовление и монтаж</h3><p>Собираем, подключаем мойку и технику, пыль увозим с собой.</p></li>
+    </ol>
+  </section>
+
+  <section class="s-photos s-reveal" aria-label="Фото"><figure><img class="" src="assets/facade.webp" alt="Кромка матового фасада крупным планом" loading="lazy" decoding="async"><figcaption>Фасад МДФ в эмали</figcaption></figure><figure><img class="" src="assets/quartz.webp" alt="Капля воды на кварцевой столешнице" loading="lazy" decoding="async"><figcaption>Столешница из кварца</figcaption></figure><figure><img class="" src="assets/hinge.webp" alt="Петля с доводчиком" loading="lazy" decoding="async"><figcaption>Петли с доводчиками</figcaption></figure></section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Что обещаем</h2></header>
+    <ul class="s-promises">
+      <li><h3>Цена в договоре не меняется</h3><p>После подписания смета не растёт.</p></li>
+      <li><h3>Фасады как на образце</h3><p>Каждый фасад сверяем с образцом, который вы держали в руках.</p></li>
+      <li><h3>Срок и дата монтажа в договоре</h3><p>Не «примерно через месяц», а конкретная дата.</p></li>
+      <li><h3>Гарантия на фурнитуру 24 месяца</h3><p>Заскрипело или отвалилось в первые два года – меняем бесплатно.</p></li>
+    </ul>
+  </section>
+
+  
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Частые вопросы</h2></header>
+    <div class="s-faq"><details><summary>Когда я узнаю цену?</summary><p>Предварительный расчёт – за день по вашим размерам. Точную смету даём после замера вместе с 3D-проектом.</p></details><details><summary>Что прислать для расчёта?</summary><p>План из ЖК, фото стены с рулеткой или просто длину и высоту.</p></details><details><summary>Может ли цена вырасти после договора?</summary><p>Нет. Предоплата  % фиксирует цену, смета после подписания не растёт.</p></details><details><summary>Сколько делаете кухню?</summary><p> дней. Срок изготовления и дату монтажа пишем в договоре.</p></details></div>
+  </section>
+
+  <section class="s-section s-final s-reveal" id="contacts">
+    <header class="s-section__head"><h2>Пришлите размеры – за день дадим расчёт</h2></header>
+    <div class="s-contacts">
+      <dl>
+        <div><dt>Адрес</dt><dd>, Казань</dd></div>
+        <div><dt>Часы</dt><dd>Пн–Сб 10:00–20:00</dd></div>
+        <div><dt>Телефон</dt><dd><a href="#"></a></dd></div>
+      </dl>
+      <div class="s-contacts__actions">
+        <a class="s-btn" href="#widget">Рассчитать кухню</a>
+        <a class="s-btn s-btn--ghost" data-s-msg="whatsapp" href="#">WhatsApp</a>
+        
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="s-foot"><p>Сергей Кулибин — сборка мебели · Казань</p><p>Кухни, шкафы, гардеробные по вашим размерам</p></footer>
+<nav class="s-dock" aria-label="Быстрая связь"><a class="s-btn" href="#widget">Рассчитать кухню</a><a class="s-btn s-btn--ghost" href="#">Позвонить</a></nav>
+<script src="style.js" defer></script>
+</body>
+</html>
